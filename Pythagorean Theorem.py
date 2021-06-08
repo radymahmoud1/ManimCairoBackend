@@ -7,10 +7,12 @@ class PythagoreanTheorem(Scene):
         title=TextMobject("Pythagorean ","Theorem")
         title.move_to(ORIGIN)
         title.scale(2)
+        # if you wanna play the credit remove the hashtags and put the functions in self.play
+        """
         credit=TextMobject("By:"," Rady"," Mahmoud")
         credit.shift(DOWN)
         credit.set_color_by_tex_to_color_map({"By:":GREEN," Rady":RED," Mahmoud":BLUE})
-        
+        """
         square=Square(color=YELLOW,fill_opacity=0.3).scale(2)
         
         square.shift(3*LEFT+UP)
@@ -92,10 +94,14 @@ class PythagoreanTheorem(Scene):
 
         self.play(ShowCreation(title),run_time=2)
         self.wait()
+        self.play(title.scale,0.3,title.shift,3.7*UP)
+        self.wait()
+        """
         self.play(Write(credit))
         self.wait()
         self.play(title.scale,0.3,title.shift,3.7*UP,credit.to_edge,DL,credit.scale,0.5)
         self.wait()
+        """
         self.play(Write(square))
         self.wait()
         self.play(FadeOut(square),Write(group_triangle1),Write(group_triangle2),Write(group_triangle3),Write(group_triangle4))
@@ -308,8 +314,8 @@ class PythagoreanTheorem(Scene):
         self.play(FadeOut(group_triangle1),group_triangle2.shift,3*LEFT+UP,
                   FadeOut(group_triangle3),FadeOut(group_triangle4)
                   ,FadeOut(triangle1_text),triangle2_text.shift,3*LEFT+UP
-                  ,FadeOut(triangle3_text),FadeOut(triangle4_text),final_formula.shift,2*RIGHT,credit.move_to,
-                  np.array([0,-3,0]),credit.scale,2)
+                  ,FadeOut(triangle3_text),FadeOut(triangle4_text),final_formula.shift,2*RIGHT)
+                  #credit.move_to,np.array([0,-3,0]),credit.scale,2
 
 
         self.wait(2)
@@ -340,8 +346,9 @@ class PythagoreanTheorem(Scene):
         self.play(final_formula.scale,1.2,final_formula.shift,0.25*LEFT,square_group.scale,1.1,square_text.scale,1.1)
         self.wait(5)
         self.play(FadeOut(final_formula),FadeOut(square_group),FadeOut(square_text))
-        self.play(title.move_to,ORIGIN,title.scale,3,credit.shift,2*UP)
+        self.play(title.move_to,ORIGIN,title.scale,3)
+                  #,credit.shift,2*UP
         self.wait(2)
-        self.play(FadeOut(title),FadeOut(credit))
+        self.play(FadeOut(title))
+                  #,FadeOut(credit)
         self.wait()
-        
