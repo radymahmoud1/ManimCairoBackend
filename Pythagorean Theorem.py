@@ -7,7 +7,7 @@ class PythagoreanTheorem(Scene):
         title=TextMobject("Pythagorean ","Theorem")
         title.move_to(ORIGIN)
         title.scale(2)
-        # if you wanna play the credit remove the hashtags and put the functions in self.play
+        # if you wanna make the credit appear remove the hashtags and put the functions in self.play
         """
         credit=TextMobject("By:"," Rady"," Mahmoud")
         credit.shift(DOWN)
