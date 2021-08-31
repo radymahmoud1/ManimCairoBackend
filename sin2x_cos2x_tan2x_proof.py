@@ -2,7 +2,7 @@ from manimlib.imports import *
 from numpy import *
 from math import *
 
-class sin2x(Scene):
+class sincostan(Scene):
     def construct(self):
         # Defining each line and letter and showing them with self.play command
         title=TexMobject(r"Proof\\ \sin(\alpha+\theta)|\sin(2 x)\\ \cos(\alpha+\theta)|\cos(2 x)\\ \tan(\alpha+\theta)|\tan(2 x) ")
